@@ -1,0 +1,24 @@
+{
+    "name": "destinocerto",
+    "version": "1.0.0",
+    "description": "Destinos de passeios",
+    "main": "main.js",
+    "author": "Karla Renata",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "destinocerto": "file:",
+        "ejs": "^3.1.10",
+        "express": "^4.16.3",
+        "method-override": "^3.0.0",
+        "sqlite3": "^5.1.7"
+    },
+    "scripts": {
+        "test": "jest",
+        "start": "node /server.js"
+    },
+    "keywords": [],
+    "devDependencies": {
+        "jest": "^29.7.0"
+    }
+}

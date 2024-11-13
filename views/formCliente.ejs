@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Passeios</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/js/validador.js"></script> 
+</head>
+<body>
+    <h1>Cadastro de Cliente </h1>
+    <main>
+        <form action="/passeios/form" id="cadastro" name="cadastro_passeio" method="post" onsubmit="return validarDadosPasseio()">
+
+            <label for="local">Nome: </label>
+            <input type="text" name="local" id="local" placeholder="Qual destino?" required>
+
+            <label for="fone">Telefone: </label>
+            <input type="tel" name="fone" id="fone">
+
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" id="email">
+            GENERO
+            RAÇA
+            <label for="datanasc">Data de Nascimento: </label>
+            <input type="date" name="datanasc" id="datanasc">
+
+            <label for="documento">Documento de identificação</label>
+            <input type="radio" name="documento" id="cpf">
+            <label for="cpf">CPF</label>
+            <input type="radio" name="documento" id="rg">
+            <label for="rg">RG</label>
+            <input type="radio" name="documento" id="estrangeiro">
+            <label for="estrangeiro">Estrangeiro</label>
+            <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]*">
+
+            <label for="descricao">Descrição: </label>
+            <textarea cols="20" rows="10" name="descricao" id="descricao" placeholder="Detalhe sobre seu passeio"></textarea>
+
+            <input type="submit" value="Salvar"/>
+        </form>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="index.ejs">Voltar</a></li>
+            <li><a href="formConsulta.ejs">Consultar Passeios</a></li>
+        </ul>
+    </footer>
+    <script src="passeio.js"></script>
+</body>
+</html>

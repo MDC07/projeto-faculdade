@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Passeios</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Consulta de passeios</h1>
+    </header>
+    <main>
+        <form name="excluir" action="/passeioss/remover?_method=DELETE" method="post">>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="checkBoxAll"> </th>
+                        <th>Local </th>
+                        <th>Data </th>
+                        <th>Preço </th>
+                        <th>Descrição </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% passeios.forEach((passeio)=> { %>
+                        <tr>
+                            <td align="center"> <input type="checkbox" name="id" value="<%= passeio.id %>"> </td>
+                            <td> <a href="/passeios/form/<%= passeio.id %>">
+                                    <%= passeio.local %>
+                                </a></td>
+                            <td>
+                                <%= passeio.valor %>
+                            </td>
+                            <td>
+                                <%= passeio.descricao %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+            <input type="submit" value="Excluir" />
+        </form>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="index.ejs">Voltar</a></li>
+            <li><a href="formAtualiza.ejs">Atualizar Passeios</a></li>
+        </ul>
+    </footer>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js">
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // add multiple select / deselect functionality
+            $("#checkBoxAll").click(function () {
+                $('.checkBox').attr('checked', this.checked);
+            });
+            // if all checkbox are selected, check the selectall checkbox  also        
+
+            $(".checkBox").click(function () {
+                if ($(".checkBox").length == $(".checkBox:checked").length) {
+                    $("#checkBoxAll").attr("checked", "checked");
+                }
+                else {
+                    $("#checkBoxAll").removeAttr("checked");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

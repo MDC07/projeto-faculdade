@@ -1,0 +1,85 @@
+/* Paleta de cores 
+Laranja vibrante (#FF6B35): Para botões ou destaques, criando energia e atraindo atenção.
+Amarelo suave (#FFC857): Para fundos, transmitindo positividade e alegria.
+Azul marinho (#2A2D34): Para textos e cabeçalhos, mantendo um tom equilibrado.
+Cinza claro (#F7F7FF): Para o fundo, dando um toque leve e moderno.
+*/
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+main {
+    margin: auto;
+    padding: 10px 50px 25px 75px;
+    width: 500px;
+    text-align: center;
+    background-color: #A3D5D3;
+}
+h1 {
+    background-color: #FF6B35;
+    color: #A3D5D3;
+    width: 450px;
+    text-align: end;
+}
+form {
+    color: #F8F8F8;
+    display: flex;
+    flex-flow: column wrap;
+    width: 450px;
+    margin: 0;
+    padding: 10px;
+    text-align: justify;
+    border: 2px solid #FF6B35;
+}
+.botoes {
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+}
+button {
+    margin: 5px;
+    background-color: #FF6B35;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    color: #F8F8F8;
+    border: 1px solid; 
+    letter-spacing: 0.15em;
+}
+li {
+    text-shadow: 1px 2px 5px #FF6B35;
+    list-style: none;
+    position: relative;
+    padding: 10px 0;
+}
+a {
+    color: #FF6B35;
+    font-size: 1.2rem;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    padding: 15px;
+}
+input, select {
+    border: #FF6B35;
+    width: 200px;
+    margin-left: 50px;
+}
+textarea {
+    margin-left: 50px;
+    width: 195px;
+    height: 55px;
+}
+table {
+    border: 2px solid #879196;
+    width: 450px;
+    padding: 10px;
+    border-collapse: collapse;
+}
+th,td {
+    border: 1px solid #879196;
+    margin: 0;
+    padding: 0;
+}
+footer {
+    text-align: center;
+}

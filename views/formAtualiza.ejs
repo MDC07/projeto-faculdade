@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização de Passeio</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Atualização de Passeio</h1>
+    </header>
+    <main>
+        <form name="atualizar" action="/passeios/form/atualizar?_method=PUT" method="post">
+            <input type="hidden" name="id" value="<%= passeio.id %>" >
+            <label for="local">Local: </label>
+            <input type="text" name="local" id="local" value="<%= passeio.local %>" placeholder="Qual destino?" required>
+            <label for="valor">Valor (R$): </label>
+            <input type="number" id="valor" name="valor" step="0.01" min="0" value="<%= passeio.valor %>" placeholder="R$ 0,00" oninput="formatarMoeda(this)" required>
+            <label for="descricao">Descrição: </label>
+            <textarea name="descricao" id="descricao" placeholder="Detalhe sobre seu passeio"><%= passeio.descricao %></textarea>
+
+            <input type="submit" value="Atualizar">
+        </form>
+    </main>
+    <footer>
+        <ul>
+            <li><a href="index.ejs">Voltar</a></li>
+            <li><a href="formConsulta.ejs">Consultar Passeios</a></li>
+        </ul>
+    </footer>
+    <script>
+        function formatarMoeda(input) {
+            let valor = input.value;
+  
+            valor = valor.replace(/\D/g, "");
+  
+            valor = (valor / 100).toFixed(2) + "";
+            valor = valor.replace(".", ",");
+            valor = valor.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+
+            input.value = "R$ " + valor;
+        }
+  
+    </script>
+</body>
+</html>
