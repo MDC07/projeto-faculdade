@@ -15,7 +15,7 @@
     },
     "scripts": {
         "test": "jest",
-        "start": "node /server.js"
+        "start": "node main.js"
     },
     "keywords": [],
     "devDependencies": {

@@ -45,26 +45,28 @@
             <input type="text" name="guia" id="guia">
 
             <label>Serviços inclusos: </label>
-                <input type="checkbox" name="servico" id="transporte">
-                <label for="transporte">Transporte</label>
-                <input type="checkbox" name="servico" id="alimentacao">
-                <label for="alimentacao">Alimentação completa</label>
-                <input type="checkbox" name="servico" id="cafedamanha">
-                <label for="cafedamanha">Apenas Café da Manhã</label>
-                <input type="checkbox" name="servico" id="almoco">
-                <label for="almoco">Apenas Almoço</label>
-                <input type="checkbox" name="servico" id="fotografia">
-                <label for="fotografia">Pacote de fotos</label>
-                <input type="checkbox" name="servico" id="primeirossocorros">
-                <label for="primeirossocorros">Kit de primeiros socorros</label>
-                <input type="checkbox" name="servico" id="equipamentos">
-                <label for="equipamentos">Equipamentos extras</label>
-                <input type="checkbox" name="servico" id="lembrancas">
-                <label for="lembrancas">Lembranças ou Brindes</label>
-                <input type="checkbox" name="servico" id="criancas">
-                <label for="criancas">Suporte para crianças</label>
-                <input type="checkbox" name="servico" id="interprete">
-                <label for="interprete">Tradução ou Intérprete</label>
+                <div class="servico">
+                    <input type="checkbox" name="servico" id="transporte">
+                    <label for="transporte">Transporte</label>
+                    <input type="checkbox" name="servico" id="alimentacao">
+                    <label for="alimentacao">Alimentação completa</label>
+                    <input type="checkbox" name="servico" id="cafedamanha">
+                    <label for="cafedamanha">Apenas Café da Manhã</label>
+                    <input type="checkbox" name="servico" id="almoco">
+                    <label for="almoco">Apenas Almoço</label>
+                    <input type="checkbox" name="servico" id="fotografia">
+                    <label for="fotografia">Pacote de fotos</label>
+                    <input type="checkbox" name="servico" id="primeirossocorros">
+                    <label for="primeirossocorros">Kit de primeiros socorros</label>
+                    <input type="checkbox" name="servico" id="equipamentos">
+                    <label for="equipamentos">Equipamentos extras</label>
+                    <input type="checkbox" name="servico" id="lembrancas">
+                    <label for="lembrancas">Lembranças ou Brindes</label>
+                    <input type="checkbox" name="servico" id="criancas">
+                    <label for="criancas">Suporte para crianças</label>
+                    <input type="checkbox" name="servico" id="interprete">
+                    <label for="interprete">Tradução ou Intérprete</label>
+                </div>
 
             <label for="descricao">Descrição: </label>
             <textarea cols="20" rows="10" name="descricao" id="descricao" placeholder="Detalhe sobre seu passeio"></textarea>
@@ -74,8 +76,8 @@
     </main>
     <footer>
         <ul>
-            <li><a href="index.ejs">Voltar</a></li>
-            <li><a href="formConsulta.ejs">Consultar Passeios</a></li>
+            <li><a href="/menuPrincipal.ejs">Voltar</a></li>
+            <li><a href="/formConsulta.ejs">Consultar Passeios</a></li>
         </ul>
     </footer>
     <script src="passeio.js"></script>

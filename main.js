@@ -1,20 +1,28 @@
-const express = require('express');
-const path = require('path');
-const Rota = require('./server/rota');
+let Rotas = require('./server/rota');
 
-const app = express();
-const port = 3000;
+class Main {
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+    static iniciar() {
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+        Main.iniciarRotas();
+        Main.iniciarServidor();
+    }
 
-Rota.iniciar(app);
+    static iniciarRotas() {
 
-app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
-});
+        Main.ROTAS.iniciar();
+    }
 
+    static iniciarServidor() {
+        
+        const ServidorNode = require('./server/server');
+        ServidorNode.start(Main.ROTAS.APP);
+    }
+
+    static get ROTAS() {
+
+        return Rotas;
+    }
+}
+
+Main.iniciar();

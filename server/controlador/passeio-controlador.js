@@ -6,35 +6,35 @@ const passeio = new Passeio(db);
 
 class PasseioControlador {
     apresentaPaginaInicial() {
-        return function(req, res) {
-            res.render('menuPrincipal', {passeio: {}});
+        return function(req, resp) {
+            resp.render('menuPrincipal', {passeio: {}});
         }
     }    
 
     listaPasseios() {
-        return function(req, res) {
+        return function(req, resp) {
             passeio.lista()
-                 .then(passeios => res.render('formConsulta', {passeios: passeios}))
+                 .then(passeios => resp.render('formConsulta', { passeio: passeios }))
                  .catch(erro => console.log(erro));
         };
     }
 
     apresentaFormCadastroPasseio() {
-        return function(req, res) {
-            res.render('formCadastra', {passeio: {}});
+        return function(req, resp) {
+            resp.render('formCadastro', {passeio: {}});
         }
     }
 
     adicionaPasseio() {
-        return function(req, res) {  
+        return function(req, resp) {  
         passeio.adiciona(req.body)
-             .then(res.redirect('/passeios'))
+             .then(resp.redirect('/passeios'))
              .catch(erro => console.log(erro));
         }
     }
 
     removePasseio() {
-        return function(req, res) {
+        return function(req, resp) {
             const ids = req.body;
             const valores =  Object.values(ids)[0];
 
@@ -46,25 +46,25 @@ class PasseioControlador {
               res.redirect('/passeios');
             } else {          
                 passeio.remove(valores)
-                     .then(res.redirect('/passeios'))
+                     .then(resp.redirect('/passeios'))
                      .catch(erro => console.log(erro));
             }        
         }
     }
 
     recuperaPasseioPorId() {
-        return function(req, res) {
+        return function(req, resp) {
             const id = req.params.id;
             passeio.buscaPorId(id)
-                 .then(passeio => res.render('formAtualiza', {passeio: passeio}))
+                 .then(passeio => resp.render('formAtualiza', {passeio: passeio}))
                  .catch(erro => console.log(erro));   
         }
     }   
 
     atualizaPasseio() {
-        return function(req, res) { 
+        return function(req, resp) { 
             passeio.atualiza(req.body)
-                 .then(res.redirect('/passeios'))
+                 .then(resp.redirect('/passeios'))
                  .catch(erro => console.log(erro));
         }
     }   
