@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +10,7 @@
 <body>
     <h1>Cadastro de Passeios </h1>
     <main>
-        <form action="/passeios/formCadastro" id="cadastro" name="cadastro_passeio" method="post" onsubmit="return validarDadosPasseio()">
+        <form action="/passeios/formConsulta" id="cadastro" name="cadastro_passeio" method="post" onsubmit="return validarDadosPasseio()">
 
             <label for="local">Local: </label>
             <input type="text" name="local" id="local" placeholder="Qual destino?" required>
@@ -74,8 +75,8 @@
     </main>
     <footer>
         <ul>
-            <li><a href=""http://localhost:3000/menuPrincipal.ejs">Voltar</a></li>
-            <li><a href="/formConsulta.ejs">Consultar Passeios</a></li>
+            <li><a href="http://localhost:3000/menuPrincipal.ejs">Voltar</a></li>
+            <li><a href="http://localhost:3000/formConsulta.ejs">Consultar Passeios</a></li>
         </ul>
     </footer>
     <script src="passeio.js"></script>

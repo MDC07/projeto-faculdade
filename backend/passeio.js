@@ -30,7 +30,7 @@ class Passeio {
                         guia,
                         servico,
                         descricao
-                    ) values (?, ?, ?)
+                    ) values (?, ?, ?, ?, ?, ?, ?, ?)
                 `,
                 [ passeio.local, passeio.valor, passeio.vagas, passeio.tipo, passeio.idioma, passeio.guia, passeio.servico, passeio.descricao, ],
                 function (err) {

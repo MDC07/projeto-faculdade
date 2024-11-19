@@ -7,6 +7,11 @@ CREATE TABLE IF NOT EXISTS passeios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     local TEXT NOT NULL, 
     valor REAL NOT NULL,
+    vagas,
+    tipo,
+    idioma,
+    guia,
+    servico,
     descricao TEXT DEFAULT ('') NOT NULL
 )
 `;
@@ -16,6 +21,11 @@ const INSERIR_PASSEIO_1 =
 INSERT INTO passeios (
     local,
     valor,
+    vagas,
+    tipo,
+    idioma,
+    guia,
+    servico,
     descricao
 ) SELECT 'Node na prática', 30.0, 'Como desenvolver com Node.' WHERE NOT EXISTS (SELECT * FROM passeios WHERE local = 'Node na prática')
 `;
@@ -23,8 +33,13 @@ INSERT INTO passeios (
 const INSERIR_PASSEIO_2 = 
 `
 INSERT INTO passeios (
-    local, 
+    local,
     valor,
+    vagas,
+    tipo,
+    idioma,
+    guia,
+    servico,
     descricao
 ) SELECT 'JavaScript na prática', 40.0, 'Como desenvolver com JavaScript.' WHERE NOT EXISTS (SELECT * FROM passeios WHERE titulo = 'JavaScript na prática')
 `;
