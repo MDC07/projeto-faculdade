@@ -9,3 +9,7 @@ function validarDadosPasseio() {
         return false;
     }
 }
+
+function validarDadosCliente() {
+    
+}

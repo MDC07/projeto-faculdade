@@ -24,10 +24,15 @@ class Passeio {
                 INSERT INTO passeios (
                         local,
                         valor,
+                        vagas,
+                        tipo,
+                        idioma,
+                        guia,
+                        servico,
                         descricao
                     ) values (?, ?, ?)
                 `,
-                [ passeio.local,passeio.valor,passeio.descricao ],
+                [ passeio.local, passeio.valor, passeio.vagas, passeio.tipo, passeio.idioma, passeio.guia, passeio.servico, passeio.descricao, ],
                 function (err) {
                     if (err) {        
                         console.log(err);
@@ -76,14 +81,24 @@ class Passeio {
         return new Promise((resolve, reject) => {
             this._db.run(`
                 UPDATE passeios                 
-                SET    local    = ?,
-                       valor     = ?,
+                SET     local    = ?,
+                        valor     = ?,
+                        vagas    =?,
+                        tipo    = ?,
+                        idioma    = ?,
+                        guia    = ?,
+                        servico    = ?,
                        descricao = ?
                 WHERE  id        = ?       
                 `,
                 [
                     passeio.local,
                     passeio.valor,
+                    passeio.vagas,
+                    passeio.tipo,
+                    passeio.idioma,
+                    passeio.guia,
+                    passeio.servico,
                     passeio.descricao,
                     passeio.id
                 ],

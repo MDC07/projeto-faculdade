@@ -41,7 +41,7 @@ class Rota {
    }
 
    static definirRotaConsulta(app) {
-      app.get('/passeios/formConsulta', passeioControlador.adicionaPasseio())
+      app.get('/passeios', passeioControlador.listaPasseios())
 }
 
    static definirRotaExclusao(app) {
