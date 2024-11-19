@@ -7,11 +7,11 @@ CREATE TABLE IF NOT EXISTS passeios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     local TEXT NOT NULL, 
     valor REAL NOT NULL,
-    vagas,
-    tipo,
-    idioma,
-    guia,
-    servico,
+    vagas REAL NOT NULL,
+    tipo TEXT NOT NULL,
+    idioma TEXT NOT NULL,
+    guia TEXT NOT NULL,
+    servico TEXT NOT NULL,
     descricao TEXT DEFAULT ('') NOT NULL
 )
 `;

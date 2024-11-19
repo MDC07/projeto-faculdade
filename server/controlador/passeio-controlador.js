@@ -1,6 +1,6 @@
 const Passeio = require('../../backend/passeio');
 
-const db = require('../../database/conexao');
+const db = require('../../database/database');
 
 const passeio = new Passeio(db);
 

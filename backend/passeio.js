@@ -20,6 +20,7 @@ class Passeio {
 
     adiciona(passeio) {
         return new Promise((resolve, reject) => {
+            console.log('Valores do passeio:', passeio);
             this._db.run(`
                 INSERT INTO passeios (
                         local,
@@ -30,9 +31,9 @@ class Passeio {
                         guia,
                         servico,
                         descricao
-                    ) values (?, ?, ?, ?, ?, ?, ?, ?)
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 `,
-                [ passeio.local, passeio.valor, passeio.vagas, passeio.tipo, passeio.idioma, passeio.guia, passeio.servico, passeio.descricao, ],
+                [ passeio.local, passeio.valor, passeio.vagas, passeio.tipo, passeio.idioma, passeio.guia, passeio.servico, passeio.descricao ],
                 function (err) {
                     if (err) {        
                         console.log(err);
@@ -48,9 +49,7 @@ class Passeio {
         return new Promise((resolve, reject) => {
             this._db.run(`
                 DELETE FROM passeios WHERE id = ?`,
-                [
-                id
-                ],
+                [ id ],
                 function (err) {
                     if (err) {
                         console.log(err);
