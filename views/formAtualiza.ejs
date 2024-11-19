@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,13 +5,14 @@
     <title>Atualização de Passeio</title>
     
     <link rel="stylesheet" href="http://localhost:3000/css/style.css">
+    <script src="http://localhost:3000/js/validador.js"></script> 
 </head>
 <body>
     <header>
         <h1>Atualização de Passeio</h1>
     </header>
     <main>
-        <form name="atualizar" action="/passeios/form/atualizar?_method=PUT" method="post">
+        <form name="atualizar" action="/passeios/formAtualiza/atualizar?_method=PUT" method="post">
             <input type="hidden" name="id" value="<%= passeio.id %>" >
             <label for="local">Local: </label>
             <input type="text" name="local" id="local" value="<%= passeio.local %>" placeholder="Qual destino?" required>
@@ -69,8 +69,8 @@
     </main>
     <footer>
         <ul>
-            <li><a href="menuPrincipal.ejs">Voltar</a></li>
-            <li><a href="formConsulta.ejs">Consultar Passeios</a></li>
+            <li><a href="http://localhost:3000/menuPrincipal.ejs">Voltar</a></li>
+            <li><a href="http://localhost:3000/formConsulta.ejs">Consultar Passeios</a></li>
         </ul>
     </footer>
     <script>

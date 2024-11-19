@@ -1,17 +1,16 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Passeios</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="http://localhost:3000/css/style.css">
 </head>
 <body>
     <header>
         <h1>Consulta de passeios</h1>
     </header>
     <main>
-        <form name="excluir" action="/passeioss/remover?_method=DELETE" method="post">>
+        <form name="excluir" action="/passeios/remover?_method=DELETE" method="post">
             <table border="1">
                 <thead>
                     <tr>
@@ -19,7 +18,13 @@
                         <th>Local </th>
                         <th>Data </th>
                         <th>Preço </th>
-                        <th>Descrição </th>
+                        <th>Número de vagas</th>
+                        <th>Ponto de encontro</th>
+                        <th>Tipo de passeio</th>
+                        <th>Idioma</th>
+                        <th>Guia Responsável</th>
+                        <th>Serviços inclusos</th>
+                        <th>Descrição</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,7 +35,28 @@
                                     <%= passeio.local %>
                                 </a></td>
                             <td>
+                                <%= passeio.data %>
+                            </td>
+                            <td>
                                 <%= passeio.valor %>
+                            </td>
+                            <td>
+                                <%= passeio.vagas %>
+                            </td>
+                            <td>
+                                <%= passeio.pontodeencontro %>
+                            </td>
+                            <td>
+                                <%= passeio.tipo %>
+                            </td>
+                            <td>
+                                <%= passeio.idioma %>
+                            </td>
+                            <td>
+                                <%= passeio.guia %>
+                            </td>
+                            <td>
+                                <%= passeio.servico %>
                             </td>
                             <td>
                                 <%= passeio.descricao %>
@@ -44,8 +70,8 @@
     </main>
     <footer>
         <ul>
-            <li><a href="/menuPrincipal.ejs">Voltar</a></li>
-            <li><a href="/formAtualiza.ejs">Atualizar Passeios</a></li>
+            <li><a href="http://localhost:3000/menuPrincipal.ejs">Voltar</a></li>
+            <li><a href="http://localhost:3000/formAtualiza.ejs">Atualizar Passeios</a></li>
         </ul>
     </footer>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js">

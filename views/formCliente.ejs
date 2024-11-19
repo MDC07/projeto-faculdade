@@ -1,16 +1,15 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Passeios</title>
     <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/style.css">
-    <script src="/js/validador.js"></script> 
+    <script src="http://localhost:3000/js/validador.js"></script> 
 </head>
 <body>
     <h1>Cadastro de Cliente </h1>
     <main>
-        <form action="/passeios/form" id="cadastro" name="cadastro_passeio" method="post" onsubmit="return validarDadosPasseio()">
+        <form action="/passeios/formCliente" id="cadastro_cliente" name="cadastro_cliente" method="post" onsubmit="return validarDadosCliente()">
 
             <label for="local">Nome: </label>
             <input type="text" name="local" id="local" placeholder="Qual destino?" required>
@@ -54,8 +53,8 @@
     </main>
     <footer>
         <ul>
-            <li><a href="index.ejs">Voltar</a></li>
-            <li><a href="formConsulta.ejs">Consultar Passeios</a></li>
+            <li><a href="http://localhost:3000/menuPrincipal.ejs">Voltar</a></li>
+            <li><a href="http://localhost:3000/formConsulta.ejs">Consultar Passeios</a></li>
         </ul>
     </footer>
     <script src="passeio.js"></script>
