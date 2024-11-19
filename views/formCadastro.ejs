@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Passeios</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/style.css">
     <script src="/js/validador.js"></script> 
 </head>
 <body>
@@ -19,8 +19,7 @@
             <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="R$ 0,00" oninput="formatarMoeda(this)" required>
 
             <label for="vagas">Número de vagas: </label>
-            <input type="number" name="vagasvagas" id="" required>
-
+            <input type="number" name="vagas" id="vagas" required>
             <label for="pontodeencontro">Ponto de encontro</label>
             <input type="radio" name="pontodeencontro" id="rodoviaria"><label for="rodoviaria">Rodoviária</label>
             <input type="radio" name="pontodeencontro" id="shopping"><label for="shopping">Shopping</label>
@@ -76,7 +75,7 @@
     </main>
     <footer>
         <ul>
-            <li><a href="/menuPrincipal.ejs">Voltar</a></li>
+            <li><a href=""http://localhost:3000/menuPrincipal.ejs">Voltar</a></li>
             <li><a href="/formConsulta.ejs">Consultar Passeios</a></li>
         </ul>
     </footer>

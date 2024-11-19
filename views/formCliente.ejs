@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Passeios</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/style.css">
     <script src="/js/validador.js"></script> 
 </head>
 <body>
@@ -20,8 +20,20 @@
 
             <label for="email">E-mail: </label>
             <input type="email" name="email" id="email">
-            GENERO
-            RAÇA
+            
+            <label for="genero">Sexo:</label>
+            <input type="radio" name="genero" id="fem"> <label for="fem">Feminino</label>
+            <input type="radio" name="genero" id="mas"> <label for="mas">Masculino</label>
+
+            <label for="etnia">Etnia</label>
+            <select name="etnia" id="etnia">
+                <option value="negro">Negro</option>
+                <option value="indigena">Indígena</option>
+                <option value="pardo">Pardo</option>
+                <option value="branco">Branco</option>
+                <option value="outros">Outros</option>
+            </select>
+
             <label for="datanasc">Data de Nascimento: </label>
             <input type="date" name="datanasc" id="datanasc">
 
@@ -34,7 +46,7 @@
             <label for="estrangeiro">Estrangeiro</label>
             <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]*">
 
-            <label for="descricao">Descrição: </label>
+            <label for="descricao_cliente">Descrição: </label>
             <textarea cols="20" rows="10" name="descricao" id="descricao" placeholder="Detalhe sobre seu passeio"></textarea>
 
             <input type="submit" value="Salvar"/>

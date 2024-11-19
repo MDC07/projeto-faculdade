@@ -35,16 +35,13 @@ class Rota {
 
     static definirRotaCadastro(app) {
 
-      app.route('/passeios/form')
+      app.route('/passeios/formCadastro')
          .get(passeioControlador.apresentaFormCadastroPasseio())
          .post(passeioControlador.adicionaPasseio());              
    }
 
    static definirRotaConsulta(app) {
-
-        app.route('/passeios/form')
-            .get(passeioControlador.apresentaFormConsultaPasseio())
-            .post(passeioControlador.consultaPasseio());              
+      app.get('/passeios/formConsulta', passeioControlador.adicionaPasseio())
 }
 
    static definirRotaExclusao(app) {
@@ -54,8 +51,8 @@ class Rota {
 
    static definirRotaAtualizacao(app) {
 
-      app.get('/passeios/form/:id', passeioControlador.recuperaPasseioPorId());
-      app.put('/passeios/form/atualizar', passeioControlador.atualizaPasseio());
+      app.get('/passeios/formAtualiza/:id', passeioControlador.recuperaPasseioPorId());
+      app.put('/passeios/formAtualiza/atualizar', passeioControlador.atualizaPasseio());
    }
 
    static get APP() {
@@ -66,4 +63,3 @@ class Rota {
 }
 
 module.exports = Rota;
-p
