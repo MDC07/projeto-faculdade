@@ -10,7 +10,7 @@
 <body>
     <h1>Cadastro de Passeios </h1>
     <main>
-        <form action="/passeios/formConsulta" id="cadastro" name="cadastro_passeio" method="post" onsubmit="return validarDadosPasseio()">
+        <form action="/passeios" id="cadastro" name="cadastro_passeio" method="post" onsubmit="return validarDadosPasseio()">
 
             <label for="local">Local: </label>
             <input type="text" name="local" id="local" placeholder="Qual destino?" required>
@@ -19,16 +19,11 @@
             <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="R$ 0,00" oninput="formatarMoeda(this)" required>
 
             <label for="vagas">Número de vagas: </label>
-            <input type="number" name="vagas" id="vagas" required>
-
-            <label for="pontodeencontro" id="pontodeencontro">Ponto de encontro</label>
-            <input type="radio" name="pontodeencontro" id="rodoviaria"><label for="rodoviaria">Rodoviária</label>
-            <input type="radio" name="pontodeencontro" id="shopping"><label for="shopping">Shopping</label>
-            <input type="radio" name="pontodeencontro" id="aeroporto"><label for="aeroporto">Aeroporto</label>
+            <input type="number" name="vagas" id="vagas" min="1" placeholder="Ex: 10" required>
 
             <label for="tipo">Tipo de passeio: </label>
-            <select name="tipo" id="tipo">
-                <option value="..."></option>
+            <select name="tipo" id="tipo" required>
+                <option value=""  disabled selected></option>
                 <option value="aventura">Aventura</option>
                 <option value="romantico">Romântico</option>
                 <option value="cultural">Cultural</option>
@@ -37,39 +32,41 @@
             </select>
 
             <label>Idioma que será conduzido: </label>
-            <input type="radio" name="idioma" id="ingles"><label for="ingles">Inglês</label>
-            <input type="radio" name="idioma" id="espanhol"><label for="espanhol">Espanhol</label>
-            <input type="radio" name="idioma" id="portugues"><label for="portugues">Português</label>
+            <div class="idioma">
+                <input type="radio" name="idioma" id="ingles" value="ingles" required><label for="ingles">Inglês</label>
+                <input type="radio" name="idioma" id="espanhol"  value="espanhol"><label for="espanhol">Espanhol</label>
+                <input type="radio" name="idioma" id="portugues" value="portugues"><label for="portugues">Português</label>
+            </div>
 
             <label for="guia">Guia Responsável:</label>
-            <input type="text" name="guia" id="guia">
+            <input type="text" name="guia" id="guia"  placeholder="Nome do guia" required>
 
             <label>Serviços inclusos: </label>
                 <div class="servico">
-                    <input type="checkbox" name="servico" id="transporte">
+                    <input type="checkbox" name="servico[]" id="transporte" value="transporte">
                     <label for="transporte">Transporte</label>
-                    <input type="checkbox" name="servico" id="alimentacao">
+                    <input type="checkbox" name="servico[]" id="alimentacao" value="alimentacao">
                     <label for="alimentacao">Alimentação completa</label>
-                    <input type="checkbox" name="servico" id="cafedamanha">
+                    <input type="checkbox" name="servico[]" id="cafedamanha" value="cafedamanha">
                     <label for="cafedamanha">Apenas Café da Manhã</label>
-                    <input type="checkbox" name="servico" id="almoco">
+                    <input type="checkbox" name="servico[]" id="almoco" value="almoco">
                     <label for="almoco">Apenas Almoço</label>
-                    <input type="checkbox" name="servico" id="fotografia">
+                    <input type="checkbox" name="servico[]" id="fotografia" value="fotografia">
                     <label for="fotografia">Pacote de fotos</label>
-                    <input type="checkbox" name="servico" id="primeirossocorros">
+                    <input type="checkbox" name="servico[]" id="primeirossocorros" value="primeirossocorros">
                     <label for="primeirossocorros">Kit de primeiros socorros</label>
-                    <input type="checkbox" name="servico" id="equipamentos">
+                    <input type="checkbox" name="servico[]" id="equipamentos" value="equipamentos">
                     <label for="equipamentos">Equipamentos extras</label>
-                    <input type="checkbox" name="servico" id="lembrancas">
+                    <input type="checkbox" name="servico[]" id="lembrancas" value="lembrancas">
                     <label for="lembrancas">Lembranças ou Brindes</label>
-                    <input type="checkbox" name="servico" id="criancas">
+                    <input type="checkbox" name="servico[]" id="criancas" value="criancas">
                     <label for="criancas">Suporte para crianças</label>
-                    <input type="checkbox" name="servico" id="interprete">
+                    <input type="checkbox" name="servico[]" id="interprete" value="interprete">
                     <label for="interprete">Tradução ou Intérprete</label>
                 </div>
 
             <label for="descricao">Descrição: </label>
-            <textarea cols="20" rows="10" name="descricao" id="descricao" placeholder="Detalhe sobre seu passeio"></textarea>
+            <textarea cols="20" rows="10" name="descricao" id="descricao" placeholder="Detalhe sobre seu passeio" required></textarea>
 
             <input type="submit" value="Salvar"/>
         </form>

@@ -1,5 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
-const bd = new sqlite3.Database('./database/database.db');
+const bd = new sqlite3.Database('./database/data.db');
 
 const CRIAR_TABELA_PASSEIO = 
 `
@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS passeios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     local TEXT NOT NULL, 
     valor REAL NOT NULL,
+    vagas INTEGER,
     descricao TEXT DEFAULT ('') NOT NULL
 )
 `;
@@ -26,7 +27,7 @@ INSERT INTO passeios (
     local,
     valor,
     descricao
-) SELECT 'JavaScript na prática', 40.0, 'Como desenvolver com JavaScript.' WHERE NOT EXISTS (SELECT * FROM passeios WHERE titulo = 'JavaScript na prática')
+) SELECT 'JavaScript na prática', 40.0, 'Como desenvolver com JavaScript.' WHERE NOT EXISTS (SELECT * FROM passeios WHERE local = 'JavaScript na prática')
 `;
 
 bd.serialize(() => {

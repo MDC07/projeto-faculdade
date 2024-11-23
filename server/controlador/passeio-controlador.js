@@ -21,7 +21,7 @@ class PasseioControlador {
 
     apresentaFormCadastroPasseio() {
         return function(req, resp) {
-            resp.render('formCadastro', {passeio: {}});
+            resp.render('formCadastro');
         }
     }
 

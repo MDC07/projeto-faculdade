@@ -11,7 +11,7 @@
         <h1>Atualização de Passeio</h1>
     </header>
     <main>
-        <form name="atualizar" action="/passeios/formAtualiza/atualizar?_method=PUT" method="post">
+        <form name="atualizar" action="/passeios/atualizar?_method=PUT" method="post">
             <input type="hidden" name="id" value="<%= passeio.id %>" >
             <label for="local">Local: </label>
             <input type="text" name="local" id="local" value="<%= passeio.local %>" placeholder="Qual destino?" required>

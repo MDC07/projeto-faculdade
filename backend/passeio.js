@@ -77,12 +77,12 @@ class Passeio {
                 UPDATE passeios                 
                 SET     local    = ?,
                         valor     = ?,
-                       descricao = ?,
+                        descricao = ?
                 WHERE  id        = ?       
                 `,
                 [
                     passeio.local,
-                    passeio.valor,
+                    passeio.valor, 
                     passeio.descricao,
                     passeio.id
                 ],

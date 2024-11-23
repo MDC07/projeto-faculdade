@@ -10,7 +10,7 @@
 <body>
     <h1>Cadastro de Cliente </h1>
     <main>
-        <form action="/passeios/formCliente" id="cadastro_cliente" name="cadastro_cliente" method="post" onsubmit="return validarDadosCliente()">
+        <form action="/passeios" id="cadastro_cliente" name="cadastro_cliente" method="post" onsubmit="return validarDadosCliente()">
 
             <label for="nome">Nome: </label>
             <input type="text" name="local" id="nome" placeholder="Qual destino?" required>
@@ -38,11 +38,11 @@
             <input type="date" name="datanasc" id="datanasc">
 
             <label for="documento">Documento de identificação</label>
-            <input type="radio" name="documento" id="cpf">
+            <input type="radio" name="documento" id="cpf" value="cpf">
             <label for="cpf">CPF</label>
-            <input type="radio" name="documento" id="rg">
+            <input type="radio" name="documento" id="rg" value="rg">
             <label for="rg">RG</label>
-            <input type="radio" name="documento" id="estrangeiro">
+            <input type="radio" name="documento" id="estrangeiro" value="estrangeiro">
             <label for="estrangeiro">Estrangeiro</label>
             <input type="text" id="documento" name="documento" inputmode="numeric" pattern="[0-9]*">
 

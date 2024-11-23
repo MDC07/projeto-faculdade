@@ -25,11 +25,15 @@ form {
     color: #F8F8F8;
     display: flex;
     flex-flow: column wrap;
-    width: 450px;
-    margin: 0;
+    gap: 10px;
+    max-width: 500px;
+    margin: auto;
     padding: 10px;
     text-align: justify;
     border: 2px solid #FF6B35;
+}
+label {
+    font-weight: bold;
 }
 .botoes {
     margin: auto;
@@ -82,4 +86,9 @@ th,td {
 }
 footer {
     text-align: center;
+}
+.servico, .idioma {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
