@@ -5,7 +5,6 @@ let app = express();
 app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));
@@ -39,7 +38,7 @@ class Rota {
    }
 
    static definirRotaConsulta(app) {
-      app.get('/passeios/formConsulta', passeioControlador.listaPasseios())
+      app.get('/passeios', passeioControlador.listaPasseios())
 }
 
    static definirRotaExclusao(app) {
