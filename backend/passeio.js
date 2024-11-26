@@ -41,7 +41,7 @@ class Passeio {
                         criancas,
                         interprete,
                         descricao
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 `,
                 [ passeio.local, passeio.valor, passeio.data, passeio.vagas, passeio.tipo, passeio.idioma, passeio.guia, passeio.transporte, passeio.alimentacao, passeio.cafedamanha, passeio.almoco, passeio.fotografia, passeio.primeirossocorros, passeio.equipamentos, passeio.lembrancas, passeio.criancas, passeio.interperte, passeio.descricao ],
                 function (err) {

@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS passeios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     local TEXT NOT NULL, 
     valor REAL NOT NULL,
-    data TEXT NOT NUL,
+    data TEXT NOT NULL,
     vagas REAL NOT NULL,
     tipo TEXT NOT NULL,
     idioma TEXT NOT NULL,

@@ -28,7 +28,7 @@ class PasseioControlador {
     adicionaPasseio() {
         return function(req, resp) {  
         passeio.adiciona(req.body)
-             .then(resp.redirect('/passeios'))
+             .then(resp.redirect('/passeios/formConsulta'))
              .catch(erro => console.log(erro));
         }
     }
@@ -43,10 +43,10 @@ class PasseioControlador {
                 passeio.remove(valores[i])
                      .catch(erro => console.log(erro));
               }
-              res.redirect('/passeios');
+              res.redirect('/passeios/formConsulta');
             } else {          
                 passeio.remove(valores)
-                     .then(resp.redirect('/passeios'))
+                     .then(resp.redirect('/passeios/formConsulta'))
                      .catch(erro => console.log(erro));
             }        
         }
@@ -64,7 +64,7 @@ class PasseioControlador {
     atualizaPasseio() {
         return function(req, resp) { 
             passeio.atualiza(req.body)
-                 .then(resp.redirect('/passeios'))
+                 .then(resp.redirect('/passeios/formConsulta'))
                  .catch(erro => console.log(erro));
         }
     }   
