@@ -7,33 +7,27 @@ CREATE TABLE IF NOT EXISTS passeios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     local TEXT NOT NULL, 
     valor REAL NOT NULL,
-    vagas INTEGER,
+    data TEXT NOT NUL,
+    vagas REAL NOT NULL,
+    tipo TEXT NOT NULL,
+    idioma TEXT NOT NULL,
+    guia TEXT NOT NULL,
+    transporte TEXT NOT NULL,
+    alimentacao TEXT NOT NULL,
+    cafedamanha TEXT NOT NULL,
+    almoco TEXT NOT NULL,
+    fotografia TEXT NOT NULL,
+    primeirossocorros TEXT NOT NULL,
+    equipamentos TEXT NOT NULL,
+    lembrancas TEXT NOT NULL,
+    criancas TEXT NOT NULL,
+    interprete TEXT NOT NULL,
     descricao TEXT DEFAULT ('') NOT NULL
 )
 `;
 
-const INSERIR_PASSEIO_1 = 
-`
-INSERT INTO passeios (
-    local,
-    valor,
-    descricao
-) SELECT 'Node na prática', 30.0, 'Como desenvolver com Node.' WHERE NOT EXISTS (SELECT * FROM passeios WHERE local = 'Node na prática')
-`;
-
-const INSERIR_PASSEIO_2 = 
-`
-INSERT INTO passeios (
-    local,
-    valor,
-    descricao
-) SELECT 'JavaScript na prática', 40.0, 'Como desenvolver com JavaScript.' WHERE NOT EXISTS (SELECT * FROM passeios WHERE local = 'JavaScript na prática')
-`;
-
 bd.serialize(() => {
     bd.run(CRIAR_TABELA_PASSEIO);
-    bd.run(INSERIR_PASSEIO_1);
-    bd.run(INSERIR_PASSEIO_2);
 });
 
 process.on('SIGINT', () =>

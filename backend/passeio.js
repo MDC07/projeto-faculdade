@@ -24,11 +24,26 @@ class Passeio {
             this._db.run(`
                 INSERT INTO passeios (
                         local,
+                        data,
                         valor,
+                        vagas,
+                        tipo,
+                        idioma,
+                        guia,
+                        transporte,
+                        alimentacao,
+                        cafedamanha,
+                        almoco,
+                        fotografia,
+                        primeirossocorros,
+                        equipamentos,
+                        lembrancas,
+                        criancas,
+                        interprete,
                         descricao
-                    ) VALUES (?, ?, ?)
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 `,
-                [ passeio.local, passeio.valor, passeio.descricao ],
+                [ passeio.local, passeio.valor, passeio.data, passeio.vagas, passeio.tipo, passeio.idioma, passeio.guia, passeio.transporte, passeio.alimentacao, passeio.cafedamanha, passeio.almoco, passeio.fotografia, passeio.primeirossocorros, passeio.equipamentos, passeio.lembrancas, passeio.criancas, passeio.interperte, passeio.descricao ],
                 function (err) {
                     if (err) {        
                         console.log(err);
@@ -76,13 +91,43 @@ class Passeio {
             this._db.run(`
                 UPDATE passeios                 
                 SET     local    = ?,
+                        data    = ?,
                         valor     = ?,
+                        vagas     = ?,
+                        tipo     = ?,
+                        idioma     = ?,
+                        guia     = ?,
+                        transporte     = ?,
+                        alimentacao     = ?,
+                        cafedamanha     = ?,
+                        almoco     = ?,
+                        fotografia     = ?,
+                        primeirossocorros     = ?,
+                        equipamentos     = ?,
+                        lembrancas     = ?,
+                        criancas     = ?,
+                        interprete     = ?,
                         descricao = ?
                 WHERE  id        = ?       
                 `,
                 [
                     passeio.local,
+                    passeio.data,
                     passeio.valor, 
+                    passeio.vagas, 
+                    passeio.tipo, 
+                    passeio.idioma, 
+                    passeio.guia, 
+                    passeio.transporte, 
+                    passeio.alimentacao, 
+                    passeio.cafedamanha, 
+                    passeio.almoco, 
+                    passeio.fotografia, 
+                    passeio.primeirossocorros, 
+                    passeio.equipamentos, 
+                    passeio.lembrancas, 
+                    passeio.criancas, 
+                    passeio.interperte, 
                     passeio.descricao,
                     passeio.id
                 ],

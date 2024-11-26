@@ -10,13 +10,16 @@
 <body>
     <h1>Cadastro de Passeios </h1>
     <main>
-        <form action="/passeios" id="cadastro" name="cadastro_passeio" method="post" onsubmit="return validarDadosPasseio()">
+        <form action="/passeios/formCadastro" id="cadastro" name="cadastro_passeio" method="post" onsubmit="return validarDadosPasseio()">
 
             <label for="local">Local: </label>
             <input type="text" name="local" id="local" placeholder="Qual destino?" required>
             
             <label for="valor">Valor (R$): </label>
             <input type="number" id="valor" name="valor" step="0.01" min="0" placeholder="R$ 0,00" oninput="formatarMoeda(this)" required>
+            
+            <label for="data">Data: </label>
+            <input type="datetime" name="data" id="data" required>
 
             <label for="vagas">Número de vagas: </label>
             <input type="number" name="vagas" id="vagas" min="1" placeholder="Ex: 10" required>
@@ -43,25 +46,25 @@
 
             <label>Serviços inclusos: </label>
                 <div class="servico">
-                    <input type="checkbox" name="servico[]" id="transporte" value="transporte">
+                    <input type="checkbox" name="transporte" id="transporte" value="transporte">
                     <label for="transporte">Transporte</label>
-                    <input type="checkbox" name="servico[]" id="alimentacao" value="alimentacao">
+                    <input type="checkbox" name="alimentacao" id="alimentacao" value="alimentacao">
                     <label for="alimentacao">Alimentação completa</label>
-                    <input type="checkbox" name="servico[]" id="cafedamanha" value="cafedamanha">
+                    <input type="checkbox" name="cafedamanha" id="cafedamanha" value="cafedamanha">
                     <label for="cafedamanha">Apenas Café da Manhã</label>
-                    <input type="checkbox" name="servico[]" id="almoco" value="almoco">
+                    <input type="checkbox" name="almoco" id="almoco" value="almoco">
                     <label for="almoco">Apenas Almoço</label>
-                    <input type="checkbox" name="servico[]" id="fotografia" value="fotografia">
+                    <input type="checkbox" name="fotografia" id="fotografia" value="fotografia">
                     <label for="fotografia">Pacote de fotos</label>
-                    <input type="checkbox" name="servico[]" id="primeirossocorros" value="primeirossocorros">
+                    <input type="checkbox" name="primeirossocorros" id="primeirossocorros" value="primeirossocorros">
                     <label for="primeirossocorros">Kit de primeiros socorros</label>
-                    <input type="checkbox" name="servico[]" id="equipamentos" value="equipamentos">
+                    <input type="checkbox" name="equipamentos" id="equipamentos" value="equipamentos">
                     <label for="equipamentos">Equipamentos extras</label>
-                    <input type="checkbox" name="servico[]" id="lembrancas" value="lembrancas">
+                    <input type="checkbox" name="lembrancas" id="lembrancas" value="lembrancas">
                     <label for="lembrancas">Lembranças ou Brindes</label>
-                    <input type="checkbox" name="servico[]" id="criancas" value="criancas">
+                    <input type="checkbox" name="criancas" id="criancas" value="criancas">
                     <label for="criancas">Suporte para crianças</label>
-                    <input type="checkbox" name="servico[]" id="interprete" value="interprete">
+                    <input type="checkbox" name="interprete" id="interprete" value="interprete">
                     <label for="interprete">Tradução ou Intérprete</label>
                 </div>
 
@@ -73,10 +76,8 @@
     </main>
     <footer>
         <ul>
-            <li><a href="http://localhost:3000/menuPrincipal.ejs">Voltar</a></li>
-            <li><a href="http://localhost:3000/formConsulta.ejs">Consultar Passeios</a></li>
+            <li><a href="http://localhost:3000/">Voltar</a></li>
         </ul>
     </footer>
-    <script src="passeio.js"></script>
 </body>
 </html>
