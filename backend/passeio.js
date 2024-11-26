@@ -20,7 +20,6 @@ class Passeio {
 
     adiciona(passeio) {
         return new Promise((resolve, reject) => {
-            console.log('Valores do passeio:', passeio);
             this._db.run(`
                 INSERT INTO passeios (
                         local,
