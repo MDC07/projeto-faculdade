@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Passeios</title>
-    <!--<link rel="stylesheet" href="http://localhost:3000/css/style.css">-->
+    <link rel="stylesheet" href="http://localhost:3000/css/style.css">
 </head>
 <body>
     <header>
@@ -12,7 +12,7 @@
     </header>
     <main>
         <form name="excluir" action="/passeios/remover?_method=DELETE" method="post">
-            <table border="1">
+            <table>
                 <thead>
                     <tr>
                         <th><input type="checkbox" id="checkBoxAll"> </th>
@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% passeio.forEach((passeios)=> { %>
+                    <% passeio.forEach((passeio)=> { %>
                         <tr>
                             <td align="center"> <input type="checkbox" name="id" value="<%= passeio.id %>"> </td>
                             <td> <a href="/passeios/formConsulta/<%= passeio.id %>">

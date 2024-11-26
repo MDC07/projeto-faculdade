@@ -11,7 +11,7 @@ Cinza claro (#F7F7FF): Para o fundo, dando um toque leve e moderno.
 main {
     margin: auto;
     padding: 10px 50px 25px 75px;
-    width: 500px;
+    width: 900px;
     text-align: center;
     background-color: #A3D5D3;
 }
@@ -22,11 +22,11 @@ h1 {
     text-align: end;
 }
 form {
-    color: #F8F8F8;
+    color: #2A2D34;
     display: flex;
     flex-flow: column wrap;
     gap: 10px;
-    max-width: 500px;
+    width: 900px;
     margin: auto;
     padding: 10px;
     text-align: justify;
@@ -66,6 +66,7 @@ a {
 input, select {
     border: #FF6B35;
     width: 200px;
+    padding: 5px;
     margin-left: 50px;
 }
 textarea {
@@ -75,14 +76,14 @@ textarea {
 }
 table {
     border: 2px solid #879196;
-    width: 450px;
+    width: 500px;
     padding: 10px;
     border-collapse: collapse;
 }
 th,td {
     border: 1px solid #879196;
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: 5px;
 }
 footer {
     text-align: center;
