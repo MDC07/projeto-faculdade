@@ -1,45 +1,104 @@
-/* Paleta de cores 
-Laranja vibrante (#FF6B35): Para botões ou destaques, criando energia e atraindo atenção.
-Amarelo suave (#FFC857): Para fundos, transmitindo positividade e alegria.
-Azul marinho (#2A2D34): Para textos e cabeçalhos, mantendo um tom equilibrado.
-Cinza claro (#F7F7FF): Para o fundo, dando um toque leve e moderno.
-*/
 
 * {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #F4F4F4;
+    color: #2A2D34;
+    line-height: 1.6;
 }
 main {
     margin: auto;
-    padding: 10px 50px 25px 75px;
-    width: 900px;
+    padding: 20px;
+    width:  90%;
+    max-width: 900px;
     text-align: center;
     background-color: #A3D5D3;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 h1 {
     background-color: #FF6B35;
     color: #A3D5D3;
     width: 450px;
     text-align: end;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 form {
     color: #2A2D34;
     display: flex;
-    flex-flow: column wrap;
-    gap: 10px;
-    width: 900px;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
     margin: auto;
-    padding: 10px;
-    text-align: justify;
+    padding: 20px;
     border: 2px solid #FF6B35;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #F8F8F8;
 }
-label {
-    font-weight: bold;
+input, select, textarea {
+    border: 2px solid #FF6B35;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 200px;
+    margin-left: 50px;
+    text-align: center;
 }
+
+textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 70px;
+}
+
+input[type="submit"] {
+    background-color: #FF6B35;
+    color: #F8F8F8;
+    font-size: 1.1em;
+    border: none;
+    margin: auto;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+textarea {
+    margin-left: 50px;
+    width: 400px;
+    height: 70px;
+}
+input[type="submit"] {
+    background-color: #FF6B35;
+    color: #F8F8F8;
+    font-size: 1.1em;
+    border: none;
+    margin: auto;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #D94C27;
+}
+
 .botoes {
     margin: auto;
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
 }
+
 button {
     margin: 5px;
     background-color: #FF6B35;
@@ -47,49 +106,97 @@ button {
     width: 100px;
     cursor: pointer;
     color: #F8F8F8;
-    border: 1px solid; 
+    border: none;
+    border-radius: 5px;
     letter-spacing: 0.15em;
+    transition: background-color 0.3s ease;
 }
-li {
-    text-shadow: 1px 2px 5px #FF6B35;
-    list-style: none;
-    position: relative;
-    padding: 10px 0;
+
+button:hover {
+    background-color: #D94C27;
 }
+
+table {
+    border: 2px solid #879196;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #879196;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #FF6B35;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+td {
+    color: #2A2D34;
+}
+
+tr:hover {
+    background-color: #F1F1F1;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.idioma, .servico {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #b3e5e5;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 a {
     color: #FF6B35;
     font-size: 1.2rem;
     text-decoration: none;
     letter-spacing: 0.15em;
     padding: 15px;
+    transition: color 0.3s ease;
 }
-input, select {
-    border: #FF6B35;
-    width: 200px;
-    padding: 5px;
-    margin-left: 50px;
+
+a:hover {
+    color: #D94C27;
 }
-textarea {
-    margin-left: 50px;
-    width: 195px;
-    height: 55px;
-}
-table {
-    border: 2px solid #879196;
-    width: 500px;
-    padding: 10px;
-    border-collapse: collapse;
-}
-th,td {
-    border: 1px solid #879196;
-    margin: auto;
-    padding: 5px;
-}
-footer {
-    text-align: center;
-}
-.servico, .idioma {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+
+@media (max-width: 768px) {
+    main {
+        width: 100%;
+        padding: 10px;
+    }
+
+    form, table {
+        width: 100%;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    input, select, textarea {
+        margin-left: 0;
+        width: 100%;
+    }
 }
