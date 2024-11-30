@@ -7,16 +7,18 @@ class Passeio {
     }
 
     lista() {
-        return new Promise((resolve,reject) => {
+        return new Promise((resolve, reject) => {
             this._db.all(
-                'SELECT * FROM passeios',
+                `SELECT *,
+                    CONCAT(CASE WHEN transporte IS NOT NULL THEN CONCAT(transporte, ', ') END, CASE WHEN alimentacao IS NOT NULL THEN CONCAT('alimentação', ', ') END, CASE WHEN cafedamanha IS NOT NULL THEN CONCAT('café da manhã', ', ') END, CASE WHEN almoco IS NOT NULL THEN CONCAT('almoço', ', ') END, CASE WHEN fotografia IS NOT NULL THEN CONCAT(fotografia, ', ') END, CASE WHEN primeirossocorros IS NOT NULL THEN CONCAT('primeiros socorros', ', ') END, CASE WHEN equipamentos IS NOT NULL THEN CONCAT(equipamentos, ', ') END, CASE WHEN lembrancas IS NOT NULL THEN CONCAT('lembranças', ', ') END, CASE WHEN criancas IS NOT NULL THEN CONCAT('crianças', ', ') END, CASE WHEN interprete IS NOT NULL THEN 'intérprete' END) AS servico
+                FROM passeios`,
                 (erro, resultados) => {
                     if (erro) return reject('Não foi possível listar os passeios!');
                     return resolve(resultados);
                 }
-            )
+            );
         });
-    }
+     }
 
     adiciona(passeio) {
         return new Promise((resolve, reject) => {
@@ -137,6 +139,13 @@ class Passeio {
                     }
     
                     resolve();
+                } 
+            )       
+        });
+    } 
+}
+
+module.exports = Passeio;
                 } 
             )       
         });
